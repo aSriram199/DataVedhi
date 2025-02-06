@@ -1,95 +1,48 @@
-import React, { useState, useEffect } from 'react';
-import { Menu, X, Sun, Moon } from 'lucide-react';
+import { useState } from "react";
+import { HoveredLink, Menu, MenuItem } from "./ui/navbar-menu";
+import { cn } from "../lib/utils";
 
-const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isDark, setIsDark] = useState(false);
+export default function Navbar() {
+  const [active, setActive] = useState<string | null>(null);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const scrollToSection = (id: string) => {
+  const handleMenuClick = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
-      setIsOpen(false);
     }
   };
 
-  const toggleTheme = () => {
-    setIsDark(!isDark);
-    document.documentElement.classList.toggle('dark');
-  };
-
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm shadow-lg' : 'bg-transparent'
-    }`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          <div className="flex-shrink-0">
-            <span className="text-2xl font-bold text-gray-900 dark:text-white">TechHub</span>
-          </div>
-          
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-center space-x-8">
-              {['Home', 'Events', 'Blog', 'About', 'Contact'].map((item) => (
-                <button
-                  key={item}
-                  onClick={() => scrollToSection(item.toLowerCase())}
-                  className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors"
-                >
-                  {item}
-                </button>
-              ))}
-              <button
-                onClick={toggleTheme}
-                className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-              >
-                {isDark ? <Sun className="w-5 h-5 text-gray-300" /> : <Moon className="w-5 h-5 text-gray-700" />}
-              </button>
+    <div className="relative w-full flex items-center justify-center">
+      <div className={cn("fixed top-10 inset-x-0 max-w-2xl mx-auto z-50")}>
+        <Menu setActive={setActive}>
+          <MenuItem setActive={setActive} active={active} item="Home" onClick={() => handleMenuClick('home')} />
+          <MenuItem setActive={setActive} active={active} item="About" onClick={() => handleMenuClick('about')}>
+            <div className="flex flex-col space-y-4 text-sm">
+              <HoveredLink to="about">Our Story</HoveredLink>
+              <HoveredLink to="about">Our Mission</HoveredLink>
             </div>
-          </div>
-          
-          <div className="md:hidden flex items-center">
-            <button
-              onClick={toggleTheme}
-              className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors mr-2"
-            >
-              {isDark ? <Sun className="w-5 h-5 text-gray-300" /> : <Moon className="w-5 h-5 text-gray-700" />}
-            </button>
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 dark:text-gray-300"
-            >
-              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
-          </div>
-        </div>
+          </MenuItem>
+          <MenuItem setActive={setActive} active={active} item="Events" onClick={() => handleMenuClick('events')}>
+            <div className="flex flex-col space-y-4 text-sm">
+              <HoveredLink to="events">Upcoming Events</HoveredLink>
+              <HoveredLink to="events">Past Events</HoveredLink>
+            </div>
+          </MenuItem>
+          <MenuItem setActive={setActive} active={active} item="Achievements" onClick={() => handleMenuClick('about')}>
+            <div className="flex flex-col space-y-4 text-sm">
+              <HoveredLink to="about">Awards</HoveredLink>
+              <HoveredLink to="about">Recognition</HoveredLink>
+            </div>
+          </MenuItem>
+          <MenuItem setActive={setActive} active={active} item="Contact" onClick={() => handleMenuClick('contact')}>
+            <div className="flex flex-col space-y-4 text-sm">
+              <HoveredLink to="contact">Get in Touch</HoveredLink>
+              <HoveredLink to="contact">Support</HoveredLink>
+            </div>
+          </MenuItem>
+        </Menu>
       </div>
-
-      {/* Mobile menu */}
-      <div className={`md:hidden ${isOpen ? 'block' : 'hidden'}`}>
-        <div className="px-2 pt-2 pb-3 space-y-1 bg-white dark:bg-gray-900 shadow-lg">
-          {['Home', 'Events', 'Blog', 'About', 'Contact'].map((item) => (
-            <button
-              key={item}
-              onClick={() => scrollToSection(item.toLowerCase())}
-              className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-800"
-            >
-              {item}
-            </button>
-          ))}
-        </div>
-      </div>
-    </nav>
+    </div>
   );
-};
-
-export default Navbar;
+}

@@ -104,13 +104,13 @@ const Contact = () => {
                 <h4 className="font-medium mb-4">Follow Us</h4>
                 <div className="flex space-x-4">
                   {[
-                    { icon: Facebook, href: '#' },
-                    { icon: Twitter, href: '#' },
-                    { icon: LinkedIn, href: '#' },
-                    { icon: Instagram, href: '#' }
-                  ].map(({ icon: Icon, href }) => (
+                    { icon: Facebook, href: '#', name: 'facebook' },
+                    { icon: Twitter, href: '#', name: 'twitter' },
+                    { icon: LinkedIn, href: '#', name: 'linkedin' },
+                    { icon: Instagram, href: '#', name: 'instagram' }
+                  ].map(({ icon: Icon, href, name }) => (
                     <a
-                      key={href}
+                      key={name}
                       href={href}
                       className="p-2 bg-gray-800 rounded-full hover:bg-gray-700 transition-colors"
                     >
