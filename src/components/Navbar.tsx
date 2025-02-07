@@ -15,7 +15,7 @@ export default function Navbar() {
   return (
     <div className="relative w-full flex items-center justify-center">
       <div className={cn("fixed top-10 inset-x-0 max-w-2xl mx-auto z-50")}>
-        <Menu setActive={setActive}>
+        <Menu setActive={setActive} className="bg-black/50 backdrop-blur-sm border-white/[0.2]">
           <MenuItem setActive={setActive} active={active} item="Home" onClick={() => handleMenuClick('home')} />
           <MenuItem setActive={setActive} active={active} item="About" onClick={() => handleMenuClick('about')}>
             <div className="flex flex-col space-y-4 text-sm">
