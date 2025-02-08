@@ -1,118 +1,146 @@
-import React, { useState } from 'react';
-import { Calendar, MapPin, Users } from 'lucide-react';
-
-const CATEGORIES = ['All', 'Workshop', 'Meetup', 'Conference', 'Hackathon'];
+import { Timeline } from "../components/ui/timeline";
 
 const EVENTS = [
   {
     id: 1,
-    title: 'Web Development Workshop',
+    title: 'Advanced AI Workshop',
     category: 'Workshop',
     date: '2024-03-25',
-    location: 'San Francisco, CA',
-    image: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80',
-    description: 'Learn modern web development techniques from industry experts.',
-    attendees: 45
+    image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80',
+    description: 'Deep dive into artificial intelligence and machine learning.',
   },
-  // Add more events here
+  {
+    id: 2,
+    title: 'Data Science Summit',
+    category: 'Conference',
+    date: '2024-02-15',
+    image: 'https://images.unsplash.com/photo-1509869175650-a1d97972541a?auto=format&fit=crop&q=80',
+    description: 'Exploring the latest trends in data science and analytics.',
+  },
+  {
+    id: 3,
+    title: 'Web3 Development',
+    category: 'Workshop',
+    date: '2023-11-10',
+    image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80',
+    description: 'Building decentralized applications with blockchain technology.',
+  },
+  {
+    id: 4,
+    title: 'Cloud Computing Conference',
+    category: 'Conference',
+    date: '2023-08-20',
+    image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80',
+    description: 'Latest advancements in cloud technologies and infrastructure.',
+  },
+  {
+    id: 5,
+    title: 'Cybersecurity Symposium',
+    category: 'Conference',
+    date: '2022-12-05',
+    image: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80',
+    description: 'Advanced security protocols and threat prevention.',
+  },
+  {
+    id: 6,
+    title: 'Mobile App Development',
+    category: 'Workshop',
+    date: '2022-07-15',
+    image: 'https://images.unsplash.com/photo-1526498460520-4c246339dccb?auto=format&fit=crop&q=80',
+    description: 'Creating cross-platform mobile applications.',
+  },
 ];
 
 const Events = () => {
-  const [selectedCategory, setSelectedCategory] = useState('All');
-  const [sortBy, setSortBy] = useState('date');
-
-  const filteredEvents = EVENTS.filter(event => 
-    selectedCategory === 'All' || event.category === selectedCategory
-  ).sort((a, b) => {
-    if (sortBy === 'date') return new Date(a.date).getTime() - new Date(b.date).getTime();
-    return a.title.localeCompare(b.title);
-  });
-
-  return (
-    <section id="events" className="py-20 bg-gray-50 dark:bg-gray-900">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl font-bold text-center mb-12 text-gray-900 dark:text-white">
-          Upcoming Events
-        </h2>
-        
-        <div className="flex flex-wrap gap-4 justify-center mb-8">
-          {CATEGORIES.map(category => (
-            <button
-              key={category}
-              onClick={() => setSelectedCategory(category)}
-              className={`px-4 py-2 rounded-full ${
-                selectedCategory === category
-                  ? 'bg-blue-600 text-white'
-                  : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300'
-              } hover:shadow-md transition-all`}
-            >
-              {category}
-            </button>
-          ))}
-        </div>
-
-        <div className="mb-8 flex justify-end">
-          <select
-            value={sortBy}
-            onChange={(e) => setSortBy(e.target.value)}
-            className="px-4 py-2 rounded-lg bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-700"
-          >
-            <option value="date">Sort by Date</option>
-            <option value="name">Sort by Name</option>
-          </select>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredEvents.map(event => (
-            <div key={event.id} className="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-              <div className="relative pb-[56.25%]">
+  const timelineData = [
+    {
+      title: "2024",
+      content: (
+        <div>
+          <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
+            Advancing Technology Frontiers
+          </p>
+          <div className="grid grid-cols-2 gap-4">
+            {EVENTS.filter(event => event.date.startsWith('2024')).map(event => (
+              <div key={event.id} className="relative group">
                 <img
                   src={event.image}
                   alt={event.title}
-                  className="absolute inset-0 w-full h-full object-cover"
+                  className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-lg transition-transform group-hover:scale-105"
                 />
-                <div className="absolute top-4 right-4 bg-blue-600 text-white px-3 py-1 rounded-full text-sm">
-                  {event.category}
-                </div>
-              </div>
-              
-              <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">
-                  {event.title}
-                </h3>
-                
-                <div className="space-y-2 mb-4">
-                  <div className="flex items-center text-gray-600 dark:text-gray-400">
-                    <Calendar className="w-4 h-4 mr-2" />
-                    {new Date(event.date).toLocaleDateString()}
-                  </div>
-                  <div className="flex items-center text-gray-600 dark:text-gray-400">
-                    <MapPin className="w-4 h-4 mr-2" />
-                    {event.location}
-                  </div>
-                  <div className="flex items-center text-gray-600 dark:text-gray-400">
-                    <Users className="w-4 h-4 mr-2" />
-                    {event.attendees} attending
+                <div className="absolute inset-0 bg-black/40 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity">
+                  <div className="absolute bottom-4 left-4 right-4">
+                    <h3 className="text-white font-semibold mb-2">{event.title}</h3>
+                    <p className="text-white/80 text-sm">{event.description}</p>
                   </div>
                 </div>
-                
-                <p className="text-gray-600 dark:text-gray-400 mb-6 line-clamp-2">
-                  {event.description}
-                </p>
-                
-                <button className="w-full px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors">
-                  Register Now
-                </button>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
+      ),
+    },
+    {
+      title: "2023",
+      content: (
+        <div>
+          <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
+            Innovation and Growth
+          </p>
+          <div className="grid grid-cols-2 gap-4">
+            {EVENTS.filter(event => event.date.startsWith('2023')).map(event => (
+              <div key={event.id} className="relative group">
+                <img
+                  src={event.image}
+                  alt={event.title}
+                  className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-lg transition-transform group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-black/40 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity">
+                  <div className="absolute bottom-4 left-4 right-4">
+                    <h3 className="text-white font-semibold mb-2">{event.title}</h3>
+                    <p className="text-white/80 text-sm">{event.description}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      ),
+    },
+    {
+      title: "2022",
+      content: (
+        <div>
+          <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
+            Foundation and Early Success
+          </p>
+          <div className="grid grid-cols-2 gap-4">
+            {EVENTS.filter(event => event.date.startsWith('2022')).map(event => (
+              <div key={event.id} className="relative group">
+                <img
+                  src={event.image}
+                  alt={event.title}
+                  className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-lg transition-transform group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-black/40 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity">
+                  <div className="absolute bottom-4 left-4 right-4">
+                    <h3 className="text-white font-semibold mb-2">{event.title}</h3>
+                    <p className="text-white/80 text-sm">{event.description}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      ),
+    },
+  ];
 
-        <div className="mt-12 text-center">
-          <button className="px-8 py-3 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg shadow hover:shadow-lg transition-all">
-            Load More Events
-          </button>
-        </div>
+  return (
+    <section id="events" className="min-h-screen w-full bg-gray-50 dark:bg-gray-900">
+      <div className="w-full">
+       
+        <Timeline data={timelineData} />
       </div>
     </section>
   );
