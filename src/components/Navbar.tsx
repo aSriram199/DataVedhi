@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { HoveredLink, Menu, MenuItem } from "./ui/navbar-menu";
+import { ThemeToggle } from "./ui/theme-toggle";
 import { cn } from "../lib/utils";
 
 export default function Navbar() {
@@ -41,6 +42,9 @@ export default function Navbar() {
               <HoveredLink to="contact">Support</HoveredLink>
             </div>
           </MenuItem>
+          <div className="border-l border-white/[0.2] pl-4 ml-4">
+            <ThemeToggle />
+          </div>
         </Menu>
       </div>
     </div>
