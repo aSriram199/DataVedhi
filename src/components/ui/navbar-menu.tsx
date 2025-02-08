@@ -2,7 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-
+import { cn } from "../../lib/utils";
 const transition = {
   type: "spring",
   mass: 0.5,
@@ -30,7 +30,7 @@ export const MenuItem = ({
       <motion.p
         onClick={onClick}
         transition={{ duration: 0.3 }}
-        className="cursor-pointer text-black hover:opacity-[0.9] dark:text-white whitespace-nowrap text-lg font-medium"
+        className="cursor-pointer text-white hover:text-neutral-300 whitespace-nowrap text-lg font-medium"
       >
         {item}
       </motion.p>
@@ -45,7 +45,7 @@ export const MenuItem = ({
               <motion.div
                 transition={transition}
                 layoutId="active"
-                className="bg-white dark:bg-black backdrop-blur-sm rounded-2xl overflow-hidden border border-black/[0.2] dark:border-white/[0.2] shadow-xl"
+                className="bg-black backdrop-blur-sm rounded-2xl overflow-hidden border border-white/[0.2] shadow-xl"
               >
                 <motion.div layout className="w-max h-full p-4">
                   {children}
@@ -62,14 +62,19 @@ export const MenuItem = ({
 export const Menu = ({
   setActive,
   children,
+  className,
 }: {
   setActive: (item: string | null) => void;
   children: React.ReactNode;
+  className?: string;
 }) => {
   return (
     <nav
-      onMouseLeave={() => setActive(null)} // resets the state
-      className="relative rounded-full border border-transparent dark:bg-black dark:border-white/[0.2] bg-white shadow-input flex justify-center space-x-8 px-8 py-6"
+      onMouseLeave={() => setActive(null)}
+      className={cn(
+        "relative rounded-full border border-transparent bg-white shadow-input flex justify-center space-x-8 px-8 py-6",
+        className
+      )}
     >
       {children}
     </nav>
@@ -120,7 +125,7 @@ export const HoveredLink = ({ children, to, ...rest }: any) => {
       {...rest}
       to={to}
       onClick={handleClick}
-      className="text-neutral-700 dark:text-neutral-200 hover:text-black text-base"
+      className="text-neutral-200 hover:text-white text-base"
     >
       {children}
     </Link>
