@@ -26,7 +26,7 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="relative h-[40vh] bg-gradient-to-b from-neutral-950 via-black to-neutral-950 dark:from-black dark:via-neutral-950 dark:to-black">
+    <section id="contact" className="relative h-[40vh] bg-gradient-to-b from-[#93c5fd] via-[#818cf8] to-[#3b82f6] dark:from-black dark:via-neutral-950 dark:to-neutral-950">
       <div className="absolute inset-0 bg-grid-white/[0.02]" />
       <div className="absolute inset-0 flex items-center justify-center bg-black/50 [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
       <div className="relative h-full flex flex-col items-center justify-center">

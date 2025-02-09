@@ -138,7 +138,7 @@ const Events = () => {
   ];
 
   return (
-    <section id="events" className="relative min-h-screen bg-gradient-to-b from-neutral-950 via-black to-neutral-950 dark:from-black dark:via-neutral-950 dark:to-black">
+    <section id="events" className="relative min-h-screen bg-gradient-to-b from-[#3b82f6] via-[#818cf8] to-[#93c5fd] dark:from-neutral-950 dark:via-black dark:to-neutral-950">
       <div className="absolute inset-0 bg-grid-white/[0.02]" />
       <div className="absolute inset-0 flex items-center justify-center bg-black/50 [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
       <div className="relative w-full">

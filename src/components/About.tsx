@@ -9,7 +9,7 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="relative min-h-screen bg-gradient-to-b from-neutral-950 via-black to-neutral-950 dark:from-black dark:via-neutral-950 dark:to-black">
+    <section id="about" className="relative min-h-screen bg-gradient-to-b from-[#93c5fd] via-[#818cf8] to-[#3b82f6] dark:from-black dark:via-neutral-950 dark:to-neutral-950">
       <div className="absolute inset-0 bg-grid-white/[0.02]" />
       <div className="absolute inset-0 flex items-center justify-center bg-black/50 [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
