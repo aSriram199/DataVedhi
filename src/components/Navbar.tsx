@@ -30,10 +30,10 @@ export default function Navbar() {
               <HoveredLink to="events">Past Events</HoveredLink>
             </div>
           </MenuItem>
-          <MenuItem setActive={setActive} active={active} item="Achievements" onClick={() => handleMenuClick('about')}>
+          <MenuItem setActive={setActive} active={active} item="Achievements" onClick={() => handleMenuClick('achievements')}>
             <div className="flex flex-col space-y-4 text-sm">
-              <HoveredLink to="about">Awards</HoveredLink>
-              <HoveredLink to="about">Recognition</HoveredLink>
+              <HoveredLink to="achievements">Awards</HoveredLink>
+              <HoveredLink to="achievements">Recognition</HoveredLink>
             </div>
           </MenuItem>
           <MenuItem setActive={setActive} active={active} item="Contact" onClick={() => handleMenuClick('contact')}>
