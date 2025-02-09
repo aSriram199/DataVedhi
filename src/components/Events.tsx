@@ -1,4 +1,5 @@
 import { Timeline } from "../components/ui/timeline";
+import { motion } from "framer-motion";
 
 const EVENTS = [
   {
@@ -137,10 +138,28 @@ const Events = () => {
   ];
 
   return (
-    <section id="events" className="min-h-screen w-full bg-gray-50 dark:bg-gray-900">
-      <div className="w-full">
-       
-        <Timeline data={timelineData} />
+    <section id="events" className="relative min-h-screen bg-gradient-to-b from-neutral-950 via-black to-neutral-950 dark:from-black dark:via-neutral-950 dark:to-black">
+      <div className="absolute inset-0 bg-grid-white/[0.02]" />
+      <div className="absolute inset-0 flex items-center justify-center bg-black/50 [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
+      <div className="relative w-full">
+        <motion.div
+          initial={{ opacity: 0.0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{
+            delay: 0.3,
+            duration: 0.8,
+            ease: "easeInOut",
+          }}
+          className="relative px-4"
+        >
+          <div className="text-3xl md:text-7xl font-bold text-white text-center pt-20">
+            Events and Workshops
+          </div>
+          <div className="font-extralight text-base md:text-xl text-neutral-200 py-4 text-center">
+            We have conducted a number of events and workshops to help students and professionals to learn and grow.
+          </div>
+          <Timeline data={timelineData} />
+        </motion.div>
       </div>
     </section>
   );
