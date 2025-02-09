@@ -4,8 +4,8 @@ import { ArrowDown } from 'lucide-react';
 
 const Hero = () => {
   return (
-    <section id="home" className="relative h-screen bg-white dark:bg-black">
-      <AuroraBackground className="bg-white dark:bg-black">
+    <section id="home" className="relative min-h-screen bg-gradient-to-b from-[#e5e2df] via-[#bad5ef] to-[#9bc3e1] dark:from-black dark:via-neutral-950 dark:to-neutral-950">
+      <AuroraBackground className="bg-transparent dark:bg-transparent">
         <motion.div
           initial={{ opacity: 0.0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
