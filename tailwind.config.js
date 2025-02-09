@@ -1,3 +1,5 @@
+const defaultTheme = require("tailwindcss/defaultTheme");
+const colors = require("tailwindcss/colors");
 const {
   default: flattenColorPalette,
 } = require("tailwindcss/lib/util/flattenColorPalette");
@@ -16,6 +18,7 @@ module.exports = {
         'fade-in-delay-2': 'fadeIn 1s ease-out 0.6s both',
         'fade-in-delay-3': 'fadeIn 1s ease-out 0.9s both',
         'aurora': 'aurora 60s linear infinite',
+        scroll: "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",
       },
       keyframes: {
         fadeIn: {
@@ -28,6 +31,11 @@ module.exports = {
           },
           to: {
             backgroundPosition: "350% 50%, 350% 50%",
+          },
+        },
+        scroll: {
+          to: {
+            transform: "translate(calc(-50% - 0.5rem))",
           },
         },
       },

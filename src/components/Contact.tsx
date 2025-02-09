@@ -2,8 +2,10 @@ import { Mail, Phone, MapPin, Facebook, Twitter, Linkedin as LinkedIn, Instagram
 
 const Contact = () => {
   return (
-    <section id="contact" className="bg-gray-900 text-white py-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="contact" className="relative bg-gradient-to-b from-neutral-950 via-black to-neutral-950 dark:from-black dark:via-neutral-950 dark:to-black">
+      <div className="absolute inset-0 bg-grid-white/[0.02]" />
+      <div className="absolute inset-0 flex items-center justify-center bg-black/50 [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
           {/* Contact Form */}
           <div className="lg:col-span-2">

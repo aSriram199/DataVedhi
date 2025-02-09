@@ -1,4 +1,3 @@
-import React from 'react';
 import { Trophy, Users, Target, Heart } from 'lucide-react';
 
 const About = () => {
@@ -10,14 +9,16 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-20 bg-gray-50 dark:bg-gray-900">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="about" className="relative min-h-screen bg-gradient-to-b from-neutral-950 via-black to-neutral-950 dark:from-black dark:via-neutral-950 dark:to-black">
+      <div className="absolute inset-0 bg-grid-white/[0.02]" />
+      <div className="absolute inset-0 flex items-center justify-center bg-black/50 [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
-            <h2 className="text-4xl font-bold mb-6 text-gray-900 dark:text-white">
+            <h2 className="text-4xl font-bold mb-6 text-white">
               Our Story
             </h2>
-            <p className="text-gray-600 dark:text-gray-400 mb-8">
+            <p className="text-gray-300 mb-8">
               Founded in 2020, TechHub has grown from a small group of passionate developers 
               to a thriving community of tech enthusiasts. Our mission is to create an inclusive 
               space where innovation flourishes and knowledge is shared freely.
@@ -34,20 +35,20 @@ const About = () => {
 
           <div className="space-y-12">
             <div>
-              <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">
+              <h3 className="text-2xl font-bold mb-4 text-white">
                 Our Mission
               </h3>
-              <p className="text-gray-600 dark:text-gray-400">
+              <p className="text-gray-300">
                 To empower individuals through technology education and foster a collaborative 
                 environment where innovation thrives.
               </p>
             </div>
 
             <div>
-              <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">
+              <h3 className="text-2xl font-bold mb-4 text-white">
                 Our Vision
               </h3>
-              <p className="text-gray-600 dark:text-gray-400">
+              <p className="text-gray-300">
                 To be the leading tech community platform that bridges the gap between learning 
                 and opportunity in the technology sector.
               </p>
