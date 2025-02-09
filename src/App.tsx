@@ -3,7 +3,6 @@ import { ThemeProvider } from './context/theme-provider';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Events from './components/Events';
-import Blog from './components/Blog';
 import About from './components/About';
 import Contact from './components/Contact';
 
@@ -16,7 +15,7 @@ function App() {
           <main>
             <Hero />
             <Events />
-            <Blog />
+
             <About />
             <Contact />
           </main>
