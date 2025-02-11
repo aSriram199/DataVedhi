@@ -20,6 +20,7 @@ function App() {
             <Route path="/" element={
               <main className="relative w-full">
                 <Hero />
+                <Events />
                 <Suspense 
                   fallback={
                     <div className="flex items-center justify-center min-h-[400px]">
@@ -28,7 +29,6 @@ function App() {
                   }
                 >
                   <div className="flex flex-col">
-                    <Events />
                     <About />
                     <Contact />
                   </div>
