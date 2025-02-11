@@ -26,15 +26,16 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="relative h-[40vh] bg-gradient-to-b from-[#93c5fd] via-[#818cf8] to-[#3b82f6] dark:from-black dark:via-neutral-950 dark:to-neutral-950">
+    <section id="contact" className="relative h-screen md:h-[40vh] bg-gradient-to-b from-[#93c5fd] via-[#818cf8] to-[#3b82f6] dark:from-black dark:via-neutral-950 dark:to-neutral-950">
       <div className="absolute inset-0 bg-grid-white/[0.02]" />
       <div className="absolute inset-0 flex items-center justify-center bg-black/50 [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
       <div className="relative h-full flex flex-col items-center justify-center">
-        <h2 className="text-4xl font-bold text-white mb-4">Contact Us</h2>
-        <div className="flex items-center justify-center h-[14rem] w-full">
+        <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">Contact Us</h2>
+        <div className="flex items-center justify-center w-full">
           <FloatingDock
             items={links}
-            mobileClassName="translate-y-0"
+            mobileClassName="translate-y-0 scale-90"
+            desktopClassName="scale-100"
           />
         </div>
       </div>

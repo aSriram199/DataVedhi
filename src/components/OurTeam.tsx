@@ -1,0 +1,108 @@
+import { FocusCards } from "./ui/focus-cards";
+import { ShootingStars } from "./ui/shooting-stars";
+import { StarsBackground } from "./ui/background-stars";
+
+const OurTeam = () => {
+  const coreTeamCards = [
+    {
+      title: "John Doe - Team Lead",
+      src: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=2940&auto=format&fit=crop",
+    },
+    {
+      title: "Jane Smith - Senior Developer",
+      src: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=2940&auto=format&fit=crop",
+    },
+    {
+      title: "Mike Johnson - Designer",
+      src: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=2940&auto=format&fit=crop",
+    },
+    {
+      title: "Sarah Williams - Project Manager",
+      src: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=2940&auto=format&fit=crop",
+    },
+  ];
+
+  const portfolioSections = [
+    {
+      title: "Technical Team",
+      cards: [
+        { title: "Frontend Developer", src: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2940&auto=format&fit=crop" },
+        { title: "Backend Developer", src: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=2940&auto=format&fit=crop" },
+        { title: "DevOps Engineer", src: "https://images.unsplash.com/photo-1573495627361-d9b87960b12d?q=80&w=2940&auto=format&fit=crop" },
+        { title: "Mobile Developer", src: "https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=2940&auto=format&fit=crop" }
+      ]
+    },
+    {
+      title: "Documentation Team",
+      cards: [
+        { title: "Technical Writer", src: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2940&auto=format&fit=crop" },
+        { title: "Content Lead", src: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2940&auto=format&fit=crop" },
+        { title: "Editor", src: "https://images.unsplash.com/photo-1542626991-cbc4e32524cc?q=80&w=2940&auto=format&fit=crop" },
+        { title: "Content Researcher", src: "https://images.unsplash.com/photo-1543269865-cbf427effbad?q=80&w=2940&auto=format&fit=crop" }
+      ]
+    },
+    {
+      title: "Design Team",
+      cards: [
+        { title: "UI Designer", src: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=2940&auto=format&fit=crop" },
+        { title: "UX Designer", src: "https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=2940&auto=format&fit=crop" },
+        { title: "Graphic Designer", src: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=2940&auto=format&fit=crop" },
+        { title: "Motion Designer", src: "https://images.unsplash.com/photo-1558403194-611308249627?q=80&w=2940&auto=format&fit=crop" }
+      ]
+    },
+    {
+      title: "Project Team",
+      cards: [
+        { title: "Project Lead", src: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=2940&auto=format&fit=crop" },
+        { title: "Scrum Master", src: "https://images.unsplash.com/photo-1553028826-f4804a6dba3b?q=80&w=2940&auto=format&fit=crop" },
+        { title: "Product Owner", src: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=2940&auto=format&fit=crop" },
+        { title: "Project Manager", src: "https://images.unsplash.com/photo-1559523161-0fc0d8b38a7a?q=80&w=2940&auto=format&fit=crop" }
+      ]
+    }
+  ];
+
+  return (
+    <div className="min-h-screen bg-neutral-900 p-8 pt-32 relative">
+      <ShootingStars 
+        minSpeed={10} 
+        maxSpeed={30} 
+        minDelay={1000} 
+        maxDelay={1000}
+        starColor="#9E00FF"
+        trailColor="#2EB9DF"
+        starWidth={12}
+        starHeight={1}
+      />
+      <StarsBackground 
+        starDensity={0.0009}
+        allStarsTwinkle={true}
+        minTwinkleSpeed={0.5}
+        maxTwinkleSpeed={0.5}
+        twinkleProbability={0.9}
+      />
+      <div className="relative z-10">
+        {/* Core Team Section */}
+        <section className="mb-32">
+          <h1 className="text-4xl font-bold text-white mb-16 text-center">Core Team</h1>
+          <FocusCards cards={coreTeamCards} />
+        </section>
+
+        {/* Portfolio Sections */}
+        <section>
+          <h2 className="text-4xl font-bold text-white mb-16 text-center">Portfolios</h2>
+          {portfolioSections.map((section, index) => (
+            <div key={index} className="mb-32">
+              <h3 className="text-2xl font-semibold text-white mb-12 ml-4">{section.title}</h3>
+              <FocusCards cards={section.cards} />
+            </div>
+          ))}
+        </section>
+      </div>
+    </div>
+  );
+};
+
+export default OurTeam; 
+
+
+
