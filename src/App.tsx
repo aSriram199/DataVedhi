@@ -13,7 +13,7 @@ const OurTeam = lazy(() => import('./components/OurTeam'));
 function App() {
   return (
     <ThemeProvider>
-      <BrowserRouter>
+      <BrowserRouter basename="/DataVedhi">
         <div className="relative min-h-screen h-screen bg-white dark:bg-gray-900 overflow-y-auto overscroll-none">
           <Navbar />
           <Routes>
