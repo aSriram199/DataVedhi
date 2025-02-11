@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { cn } from "../../lib/utils";
 const transition = {
   type: "spring",
@@ -112,12 +112,28 @@ export const ProductItem = ({
 };
 
 export const HoveredLink = ({ children, to, ...rest }: any) => {
+  const location = useLocation();
+  const navigate = useNavigate();
+
   const handleClick = (e: React.MouseEvent) => {
-    e.preventDefault();
-    const element = document.getElementById(to.replace('/', ''));
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+    if (to.startsWith('#')) {
+      e.preventDefault();
+      if (location.pathname !== '/') {
+        navigate('/');
+        setTimeout(() => {
+          const element = document.getElementById(to.substring(1));
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 100);
+      } else {
+        const element = document.getElementById(to.substring(1));
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
     }
+    // If it starts with '/', let React Router handle the navigation
   };
 
   return (
