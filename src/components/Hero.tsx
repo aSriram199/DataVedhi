@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { AuroraBackground } from "./ui/aurora-background";
 import { ArrowDown } from 'lucide-react';
-
+import logo from '../assets/logo.png';
 const Hero = () => {
   return (
     <section id="home" className="relative min-h-screen bg-gradient-to-b from-[#e5e2df] via-[#bad5ef] to-[#9bc3e1] dark:from-black dark:via-neutral-950 dark:to-neutral-950">
@@ -16,6 +16,17 @@ const Hero = () => {
           }}
           className="relative flex flex-col gap-4 items-center justify-center px-4 h-screen"
         >
+          <motion.img
+            src={logo}
+            alt="Data Vedhi Club Logo"
+            className="w-40 h-40 object-contain mb-4"
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{
+              duration: 0.5,
+              ease: "easeOut"
+            }}
+          />
           <div className="text-3xl md:text-7xl font-bold text-black dark:text-white text-center">
             Data Vedhi
           </div>
