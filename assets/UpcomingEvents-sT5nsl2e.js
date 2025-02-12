@@ -1,1 +1,0 @@
-import{j as t}from"./index-BYE3xKQf.js";const s=()=>t.jsxs("div",{className:"min-h-screen bg-white dark:bg-gray-900 p-8",children:[t.jsx("h1",{className:"text-4xl font-bold text-gray-900 dark:text-white mb-6",children:"Upcoming Events"}),t.jsx("div",{className:"max-w-7xl mx-auto"})]});export{s as default};
