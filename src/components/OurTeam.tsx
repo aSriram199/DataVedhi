@@ -20,6 +20,14 @@ const OurTeam = () => {
       title: "Sarah Williams - Project Manager",
       src: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=2940&auto=format&fit=crop",
     },
+    {
+      title: "Alex Chen - Technical Architect",
+      src: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2940&auto=format&fit=crop",
+    },
+    {
+      title: "Emma Davis - Product Owner",
+      src: "https://images.unsplash.com/photo-1573497019236-17f8177b81e8?q=80&w=2940&auto=format&fit=crop", 
+    }
   ];
 
   const portfolioSections = [
@@ -82,17 +90,17 @@ const OurTeam = () => {
       />
       <div className="relative z-10">
         {/* Core Team Section */}
-        <section className="mb-32">
+        <section className="mb-32 container mx-auto max-w-7xl">
           <h1 className="text-4xl font-bold text-white mb-16 text-center">Core Team</h1>
           <FocusCards cards={coreTeamCards} />
         </section>
 
         {/* Portfolio Sections */}
-        <section>
+        <section className="container mx-auto max-w-7xl">
           <h2 className="text-4xl font-bold text-white mb-16 text-center">Portfolios</h2>
           {portfolioSections.map((section, index) => (
             <div key={index} className="mb-32">
-              <h3 className="text-2xl font-semibold text-white mb-12 ml-4">{section.title}</h3>
+              <h3 className="text-2xl font-semibold text-white mb-12 text-center">{section.title}</h3>
               <FocusCards cards={section.cards} />
             </div>
           ))}
