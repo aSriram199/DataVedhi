@@ -11,7 +11,7 @@ import UpcomingEvents from './components/UpcomingEvents';
 function App() {
   return (
     <ThemeProvider>
-      <BrowserRouter>
+      <BrowserRouter basename='/DataVedhi'>
         <div className="min-h-screen bg-white dark:bg-gray-900">
           <Navbar />
           <Routes>
