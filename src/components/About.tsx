@@ -12,8 +12,7 @@ const About = () => {
             Our Story
           </h2>
           <p className="text-gray-300 mb-8">
-            Founded in 0000, Data Vedhi is a community of data enthusiasts who are passionate about data.
-            we conduct workshops, hackathons, and events to help people learn about data and data science.
+          Datavedhi.club, the official Data Science club of VBIT, is dedicated to fostering a strong foundation in data-driven technologies. Established under the guidance of Dr. Y. Raju (HoD, Data Science) with faculty coordinator K. Kamal sir, the club provides a platform for students to explore Machine Learning, Artificial Intelligence, Data Analytics, and Big Data. By organizing hands-on workshops, hackathons, and industry collaborations, Datavedhi.club empowers aspiring data scientists to solve real-world problems with data-driven insights. The club encourages innovation, collaboration, and continuous learning to shape future leaders in the field of Data Science
           </p>
         </div>
 
@@ -35,15 +34,9 @@ const About = () => {
                 Tech Workshops & Training
               </p>
               <p className="text-sm text-neutral-600 dark:text-neutral-400">
-              To empower individuals through technology education and foster a collaborative 
-              environment where innovation thrives.
+              To cultivate a dynamic learning environment by organizing hackathons, flagship events, and workshops in Data Science. Equip students with practical skills in AI, Machine Learning, and Data Analytics through hands-on experience. Bridge the gap between academia and industry, empowering future data professionals to solve real-world challenges.
               </p>
-              <button className="rounded-full pl-4 pr-1 py-1 text-white flex items-center space-x-1 bg-black mt-4 text-xs font-bold dark:bg-zinc-800">
-                <span>Learn More</span>
-                <span className="bg-zinc-700 rounded-full text-[0.6rem] px-2 py-0 text-white">
-                  Free
-                </span>
-              </button>
+              
             </BackgroundGradient>
           </div>
 
@@ -62,15 +55,10 @@ const About = () => {
                 Community Events
               </p>
               <p className="text-sm text-neutral-600 dark:text-neutral-400">
-              To be the leading tech community platform that bridges the gap between learning 
-              and opportunity in the technology sector.
+              To be a leading Data Science community that nurtures innovation through hackathons, flagship events, and workshops. Empower students with industry-relevant skills to solve real-world data challenges. Foster a culture of continuous learning, collaboration, and technological advancement in AI, Machine Learning, and Data Analytics.
+
               </p>
-              <button className="rounded-full pl-4 pr-1 py-1 text-white flex items-center space-x-1 bg-black mt-4 text-xs font-bold dark:bg-zinc-800">
-                <span>Join Community</span>
-                <span className="bg-zinc-700 rounded-full text-[0.6rem] px-2 py-0 text-white">
-                  Members
-                </span>
-              </button>
+            
             </BackgroundGradient>
           </div>
         </div>
