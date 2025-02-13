@@ -6,7 +6,7 @@ const OurTeam = () => {
   const coreTeamCards = [
     {
       title: "John Doe - Team Lead",
-      src: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=2940&auto=format&fit=crop",
+      src: "C:\Users\aksha\OneDrive\Pictures\nature.jpg",
     },
     {
       title: "Jane Smith - Senior Developer",
@@ -70,7 +70,7 @@ const OurTeam = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-neutral-900 p-8 pt-32 relative">
+    <div className="min-h-screen bg-neutral-900 p-2 sm:p-4 md:p-8 pt-24 sm:pt-28 md:pt-32 relative">
       <ShootingStars 
         minSpeed={10} 
         maxSpeed={30} 
@@ -90,17 +90,23 @@ const OurTeam = () => {
       />
       <div className="relative z-10">
         {/* Core Team Section */}
-        <section className="mb-32 container mx-auto max-w-7xl">
-          <h1 className="text-4xl font-bold text-white mb-16 text-center">Core Team</h1>
+        <section className="mb-16 sm:mb-24 md:mb-32 container mx-auto max-w-7xl">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-8 sm:mb-12 md:mb-16 text-center">
+            Core Team
+          </h1>
           <FocusCards cards={coreTeamCards} />
         </section>
 
         {/* Portfolio Sections */}
         <section className="container mx-auto max-w-7xl">
-          <h2 className="text-4xl font-bold text-white mb-16 text-center">Portfolios</h2>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-8 sm:mb-12 md:mb-16 text-center">
+            Portfolios
+          </h2>
           {portfolioSections.map((section, index) => (
-            <div key={index} className="mb-32">
-              <h3 className="text-2xl font-semibold text-white mb-12 text-center">{section.title}</h3>
+            <div key={index} className="mb-16 sm:mb-24 md:mb-32">
+              <h3 className="text-xl sm:text-2xl font-semibold text-white mb-6 sm:mb-8 md:mb-12 text-center">
+                {section.title}
+              </h3>
               <FocusCards cards={section.cards} />
             </div>
           ))}
