@@ -4,6 +4,7 @@ import { ThemeToggle } from "./ui/theme-toggle";
 import { cn } from "../lib/utils";
 import { Menu as MenuIcon, X } from "lucide-react";
 import { useNavigate, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
   const [active, setActive] = useState<string | null>(null);
@@ -14,7 +15,6 @@ export default function Navbar() {
   const handleMenuClick = (id: string) => {
     if (location.pathname !== '/') {
       navigate('/');
-      // Wait for navigation to complete before scrolling
       setTimeout(() => {
         const element = document.getElementById(id);
         if (element) {
@@ -73,43 +73,85 @@ export default function Navbar() {
         </Menu>
       </div>
 
-      {/* Mobile Menu */}
-      <div className={cn(
-        "fixed inset-0 bg-black/50 backdrop-blur-sm z-40 md:hidden transition-all duration-300",
-        isMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
-      )}>
-        <div className={cn(
-          "absolute top-20 inset-x-4 p-4 rounded-lg bg-black/50 backdrop-blur-sm border border-white/[0.2] transition-all duration-300",
-          isMenuOpen ? "translate-y-0 opacity-100" : "translate-y-[-1rem] opacity-0"
-        )}>
-          <div className="flex flex-col space-y-4">
-            <button 
-              className="text-white hover:text-neutral-200 transition-colors text-xl font-medium"
-              onClick={() => handleMenuClick('home')}
-            >
-              Home
-            </button>
-            <button 
-              className="text-white hover:text-neutral-200 transition-colors text-xl font-medium"
-              onClick={() => handleMenuClick('about')}
-            >
-              About
-            </button>
-            <button 
-              className="text-white hover:text-neutral-200 transition-colors text-xl font-medium"
-              onClick={() => handleMenuClick('events')}
-            >
-              Events
-            </button>
-            <button 
-              className="text-white hover:text-neutral-200 transition-colors text-xl font-medium"
-              onClick={() => handleMenuClick('contact')}
-            >
-              Contact
-            </button>
-            <div className="pt-4 border-t border-white/[0.2]">
-              <ThemeToggle />
-            </div>
+      {/* Updated Mobile Menu */}
+      <div 
+        className={cn(
+          "fixed inset-0 bg-black/90 backdrop-blur-md z-40 md:hidden transition-all duration-300",
+          isMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+        )}
+      >
+        <div 
+          className={cn(
+            "absolute inset-0 flex flex-col items-start justify-center p-8 space-y-8 transition-all duration-300",
+            isMenuOpen ? "translate-y-0 opacity-100" : "translate-y-[-1rem] opacity-0"
+          )}
+        >
+          <Link 
+            to="/"
+            className="text-white hover:text-neutral-300 transition-colors text-2xl font-medium"
+            onClick={() => {
+              handleMenuClick('home');
+              setIsMenuOpen(false);
+            }}
+          >
+            Home
+          </Link>
+          
+          <Link 
+            to="/about"
+            className="text-white hover:text-neutral-300 transition-colors text-2xl font-medium"
+            onClick={() => {
+              handleMenuClick('about');
+              setIsMenuOpen(false);
+            }}
+          >
+            About
+          </Link>
+
+          <Link 
+            to="/events"
+            className="text-white hover:text-neutral-300 transition-colors text-2xl font-medium"
+            onClick={() => {
+              handleMenuClick('events');
+              setIsMenuOpen(false);
+            }}
+          >
+            Events
+          </Link>
+
+          <Link 
+            to="/contact"
+            className="text-white hover:text-neutral-300 transition-colors text-2xl font-medium"
+            onClick={() => {
+              handleMenuClick('contact');
+              setIsMenuOpen(false);
+            }}
+          >
+            Contact
+          </Link>
+
+          <Link 
+            to="/our-team"
+            className="text-white hover:text-neutral-300 transition-colors text-2xl font-medium"
+            onClick={() => {
+              setIsMenuOpen(false);
+            }}
+          >
+            Our Team
+          </Link>
+
+          <Link 
+            to="/upcoming-events"
+            className="text-white hover:text-neutral-300 transition-colors text-2xl font-medium"
+            onClick={() => {
+              setIsMenuOpen(false);
+            }}
+          >
+            Upcoming Events
+          </Link>
+
+          <div className="pt-8">
+            <ThemeToggle />
           </div>
         </div>
       </div>
