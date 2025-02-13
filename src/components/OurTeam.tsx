@@ -101,13 +101,34 @@ const OurTeam = () => {
           <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-8 sm:mb-12 md:mb-16 text-center">
             Core Team
           </h1>
-          <div className="space-y-8">
-            {/* Top Row - 2 cards */}
-            <FocusCards cards={coreTeamCards.slice(0, 2)} />
-            {/* Middle Row - 3 cards */}
-            <FocusCards cards={coreTeamCards.slice(2, 5)} />
-            {/* Bottom Row - 2 cards */}
-            <FocusCards cards={coreTeamCards.slice(5, 7)} />
+          
+          {/* Desktop View (2-3-2) */}
+          <div className="hidden md:block">
+            <div className="mb-4">
+              <FocusCards cards={coreTeamCards.slice(0, 2)} />
+            </div>
+            <div className="mb-4">
+              <FocusCards cards={coreTeamCards.slice(2, 5)} />
+            </div>
+            <div>
+              <FocusCards cards={coreTeamCards.slice(5, 7)} />
+            </div>
+          </div>
+
+          {/* Mobile View (1-2-2-2) */}
+          <div className="md:hidden">
+            <div className="mb-4">
+              <FocusCards cards={coreTeamCards.slice(0, 1)} isMobile={true} />
+            </div>
+            <div className="mb-4">
+              <FocusCards cards={coreTeamCards.slice(1, 3)} isMobile={true} />
+            </div>
+            <div className="mb-4">
+              <FocusCards cards={coreTeamCards.slice(3, 5)} isMobile={true} />
+            </div>
+            <div>
+              <FocusCards cards={coreTeamCards.slice(5, 7)} isMobile={true} />
+            </div>
           </div>
         </section>
 
