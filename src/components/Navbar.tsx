@@ -2,12 +2,14 @@ import { useState } from "react";
 import { HoveredLink, Menu, MenuItem } from "./ui/navbar-menu";
 import { ThemeToggle } from "./ui/theme-toggle";
 import { cn } from "../lib/utils";
-import { Menu as MenuIcon, X } from "lucide-react";
+import { Menu as MenuIcon, X, ChevronDown, ChevronUp } from "lucide-react";
 import { useNavigate, useLocation } from "react-router-dom";
 
 export default function Navbar() {
   const [active, setActive] = useState<string | null>(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [eventsOpen, setEventsOpen] = useState(false);
+  const [aboutOpen, setAboutOpen] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -33,42 +35,50 @@ export default function Navbar() {
   return (
     <div className="relative w-full flex items-center justify-center">
       {/* Mobile Menu Button */}
-      <button 
-        onClick={() => setIsMenuOpen(!isMenuOpen)}
-        className="fixed top-4 right-4 z-50 p-2 rounded-full bg-black/50 backdrop-blur-sm md:hidden"
-      >
-        {isMenuOpen ? (
-          <X className="h-6 w-6 text-white" />
-        ) : (
-          <MenuIcon className="h-6 w-6 text-white" />
-        )}
-      </button>
+      <div className="fixed top-4 right-4 z-50 flex items-center gap-3 md:hidden">
+        <div className="p-2 rounded-full bg-black/50 backdrop-blur-sm">
+          <ThemeToggle />
+        </div>
+        <button 
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          className="p-2 rounded-full bg-black/50 backdrop-blur-sm"
+        >
+          {isMenuOpen ? (
+            <X className="h-6 w-6 text-white" />
+          ) : (
+            <MenuIcon className="h-6 w-6 text-white" />
+          )}
+        </button>
+      </div>
 
       {/* Desktop Menu */}
-      <div className="fixed top-10 inset-x-0 max-w-2xl mx-auto z-50 hidden md:block">
-        <Menu setActive={setActive} className="bg-black/50 backdrop-blur-sm border-white/[0.2]">
-          <MenuItem setActive={setActive} active={active} item="Home" onClick={() => handleMenuClick('home')} />
-          <MenuItem setActive={setActive} active={active} item="Events" onClick={() => handleMenuClick('events')}>
-            <div className="flex flex-col space-y-4 text-sm">
-              <HoveredLink to="/upcoming-events">Upcoming Events</HoveredLink>
-              <HoveredLink to="#events">Past Events</HoveredLink>
+      <div className="fixed top-10 inset-x-0 max-w-xl mx-auto z-50 hidden md:block">
+        <Menu setActive={setActive} className="bg-black/50 backdrop-blur-sm border-white/[0.2] py-4">
+          <div className="flex items-center">
+            <div className="flex-1 flex items-center justify-center gap-12 px-3">
+              <MenuItem setActive={setActive} active={active} item="Home" onClick={() => handleMenuClick('home')} />
+              <MenuItem setActive={setActive} active={active} item="Events" onClick={() => handleMenuClick('events')}>
+                <div className="flex flex-col space-y-6 text-sm py-2">
+                  <HoveredLink to="/upcoming-events">Upcoming Events</HoveredLink>
+                  <HoveredLink to="#events">Past Events</HoveredLink>
+                </div>
+              </MenuItem>
+              <MenuItem setActive={setActive} active={active} item="About" onClick={() => handleMenuClick('about')}>
+                <div className="flex flex-col space-y-6 text-sm py-2">
+                  <HoveredLink to="#about">Our Story</HoveredLink>
+                  <HoveredLink to="/our-team">Our Team</HoveredLink>
+                </div>
+              </MenuItem>
+              <MenuItem setActive={setActive} active={active} item="Contact" onClick={() => handleMenuClick('contact')}>
+                <div className="flex flex-col space-y-6 text-sm py-2">
+                  <HoveredLink to="#contact">Get in Touch</HoveredLink>
+                  <HoveredLink to="#contact">Support</HoveredLink>
+                </div>
+              </MenuItem>
             </div>
-          </MenuItem>
-          <MenuItem setActive={setActive} active={active} item="About" onClick={() => handleMenuClick('about')}>
-            <div className="flex flex-col space-y-4 text-sm">
-              <HoveredLink to="#about">Our Story</HoveredLink>
-              <HoveredLink to="/our-team">Our Team</HoveredLink>
+            <div className="border-l border-white/[0.2] pl-3 ml-3 flex items-center h-[38px]">
+              <ThemeToggle />
             </div>
-          </MenuItem>
-         
-          <MenuItem setActive={setActive} active={active} item="Contact" onClick={() => handleMenuClick('contact')}>
-            <div className="flex flex-col space-y-4 text-sm">
-              <HoveredLink to="#contact">Get in Touch</HoveredLink>
-              <HoveredLink to="#contact">Support</HoveredLink>
-            </div>
-          </MenuItem>
-          <div className="border-l border-white/[0.2] pl-4 ml-4">
-            <ThemeToggle />
           </div>
         </Menu>
       </div>
@@ -84,32 +94,86 @@ export default function Navbar() {
         )}>
           <div className="flex flex-col space-y-4">
             <button 
-              className="text-white hover:text-neutral-200 transition-colors text-xl font-medium"
+              className="text-white hover:text-neutral-200 transition-colors text-xl font-medium text-left"
               onClick={() => handleMenuClick('home')}
             >
               Home
             </button>
+
+            {/* About Dropdown */}
+            <div className="space-y-2">
+              <button 
+                className="text-white hover:text-neutral-200 transition-colors text-xl font-medium text-left w-full flex items-center justify-between"
+                onClick={() => setAboutOpen(!aboutOpen)}
+              >
+                About
+                {aboutOpen ? (
+                  <ChevronUp className="h-5 w-5" />
+                ) : (
+                  <ChevronDown className="h-5 w-5" />
+                )}
+              </button>
+              {aboutOpen && (
+                <div className="pl-4 space-y-2">
+                  <button 
+                    className="text-white/80 hover:text-white transition-colors text-lg font-medium text-left w-full"
+                    onClick={() => handleMenuClick('about')}
+                  >
+                    Our Story
+                  </button>
+                  <button 
+                    className="text-white/80 hover:text-white transition-colors text-lg font-medium text-left w-full"
+                    onClick={() => {
+                      navigate('/our-team');
+                      setIsMenuOpen(false);
+                    }}
+                  >
+                    Our Team
+                  </button>
+                </div>
+              )}
+            </div>
+
+            {/* Events Dropdown */}
+            <div className="space-y-2">
+              <button 
+                className="text-white hover:text-neutral-200 transition-colors text-xl font-medium text-left w-full flex items-center justify-between"
+                onClick={() => setEventsOpen(!eventsOpen)}
+              >
+                Events
+                {eventsOpen ? (
+                  <ChevronUp className="h-5 w-5" />
+                ) : (
+                  <ChevronDown className="h-5 w-5" />
+                )}
+              </button>
+              {eventsOpen && (
+                <div className="pl-4 space-y-2">
+                  <button 
+                    className="text-white/80 hover:text-white transition-colors text-lg font-medium text-left w-full"
+                    onClick={() => {
+                      navigate('/upcoming-events');
+                      setIsMenuOpen(false);
+                    }}
+                  >
+                    Upcoming Events
+                  </button>
+                  <button 
+                    className="text-white/80 hover:text-white transition-colors text-lg font-medium text-left w-full"
+                    onClick={() => handleMenuClick('events')}
+                  >
+                    Past Events
+                  </button>
+                </div>
+              )}
+            </div>
+
             <button 
-              className="text-white hover:text-neutral-200 transition-colors text-xl font-medium"
-              onClick={() => handleMenuClick('about')}
-            >
-              About
-            </button>
-            <button 
-              className="text-white hover:text-neutral-200 transition-colors text-xl font-medium"
-              onClick={() => handleMenuClick('events')}
-            >
-              Events
-            </button>
-            <button 
-              className="text-white hover:text-neutral-200 transition-colors text-xl font-medium"
+              className="text-white hover:text-neutral-200 transition-colors text-xl font-medium text-left"
               onClick={() => handleMenuClick('contact')}
             >
               Contact
             </button>
-            <div className="pt-4 border-t border-white/[0.2]">
-              <ThemeToggle />
-            </div>
           </div>
         </div>
       </div>
