@@ -1,18 +1,7 @@
 import { BackgroundBeams } from "./ui/background-line";
 import { Carousel } from "./ui/carousel";
 
-
 const slideData = [
-  {
-    title: "Web Workshop",
-    button: "Register",
-    src: "https://images.unsplash.com/photo-1627398242454-45a1465c2479?q=80&w=3374&auto=format&fit=crop&ixlib=rb-4.0.3",
-  },
-  {
-    title: "React Workshop",
-    button: "Register",
-    src: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3",
-  },
   {
     title: "Hackathon",
     button: "Register",
@@ -27,13 +16,17 @@ const slideData = [
 
 const UpcomingEvents = () => {
   return (
-    <div className="h-screen relative w-full overflow-hidden bg-slate-900 flex flex-col items-center justify-center rounded-lg">
-      <div className="absolute inset-0 w-full h-full bg-slate-900 z-20 [mask-image:radial-gradient(transparent,white)] pointer-events-none" />
-      <p className="z-30 text-white text-2xl font-bold pb-5">Upcoming Events</p>
-      <BackgroundBeams />
-      <div className="z-30">
-        <Carousel slides={slideData} />
+    <div className="h-screen w-full rounded-md dark:bg-neutral-950 bg-white relative flex flex-col items-center justify-center antialiased overflow-x-hidden text-slate-800 dark:text-white">
+      <div className="max-w-4xl mx-auto p-4 w-full">
+        <h1 className="relative z-10 text-3xl md:text-5xl bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-600 text-center font-sans font-bold">
+          Upcoming Events
+        </h1>
+        
+        <div className="relative z-10 mt-8 w-full max-w-full ">
+          <Carousel slides={slideData} />
+        </div>
       </div>
+      <BackgroundBeams />
     </div>
   );
 };
