@@ -4,30 +4,37 @@ import { StarsBackground } from "./ui/background-stars";
 
 const OurTeam = () => {
   const coreTeamCards = [
+    // Top Row (2)
     {
-      title: "John Doe - Team Lead",
-      src: "C:\Users\aksha\OneDrive\Pictures\nature.jpg",
-    },
-    {
-      title: "Jane Smith - Senior Developer",
-      src: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=2940&auto=format&fit=crop",
-    },
-    {
-      title: "Mike Johnson - Designer",
+      title: "Dr. Y. Raju - HOD",
       src: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=2940&auto=format&fit=crop",
     },
     {
-      title: "Sarah Williams - Project Manager",
+      title: "K. Kamal - Faculty Coordinator",
+      src: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2940&auto=format&fit=crop",
+    },
+    // Middle Row (3)
+    {
+      title: "John Doe - President",
+      src: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=2940&auto=format&fit=crop",
+    },
+    {
+      title: "Jane Smith - Vice President",
       src: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=2940&auto=format&fit=crop",
     },
     {
-      title: "Alex Chen - Technical Architect",
-      src: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2940&auto=format&fit=crop",
+      title: "Mike Johnson - Secretary",
+      src: "https://images.unsplash.com/photo-1573497019236-17f8177b81e8?q=80&w=2940&auto=format&fit=crop",
+    },
+    // Bottom Row (2)
+    {
+      title: "Sarah Williams - Joint Secretary",
+      src: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2940&auto=format&fit=crop",
     },
     {
-      title: "Emma Davis - Product Owner",
-      src: "https://images.unsplash.com/photo-1573497019236-17f8177b81e8?q=80&w=2940&auto=format&fit=crop", 
-    }
+      title: "Alex Chen - Treasurer",
+      src: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=2940&auto=format&fit=crop",
+    },
   ];
 
   const portfolioSections = [
@@ -94,7 +101,14 @@ const OurTeam = () => {
           <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-8 sm:mb-12 md:mb-16 text-center">
             Core Team
           </h1>
-          <FocusCards cards={coreTeamCards} />
+          <div className="space-y-8">
+            {/* Top Row - 2 cards */}
+            <FocusCards cards={coreTeamCards.slice(0, 2)} />
+            {/* Middle Row - 3 cards */}
+            <FocusCards cards={coreTeamCards.slice(2, 5)} />
+            {/* Bottom Row - 2 cards */}
+            <FocusCards cards={coreTeamCards.slice(5, 7)} />
+          </div>
         </section>
 
         {/* Portfolio Sections */}
