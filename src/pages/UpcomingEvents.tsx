@@ -1,5 +1,5 @@
-import { BackgroundBeams } from "./ui/background-line";
-import { Carousel } from "./ui/carousel";
+import { BackgroundBeams } from "../components/ui/background-line";
+import { Carousel } from "../components/ui/carousel";
 
 const slideData = [
   {

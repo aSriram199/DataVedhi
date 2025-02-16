@@ -5,8 +5,8 @@ import Hero from './components/Hero';
 import Events from './components/Events';
 import About from './components/About';
 import Contact from './components/Contact';
-import OurTeam from './components/OurTeam';
-import UpcomingEvents from './components/UpcomingEvents';
+import OurTeam from './pages/OurTeam'; 
+import UpcomingEvents from './pages/UpcomingEvents';
 
 function App() {
   return (

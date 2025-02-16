@@ -52,7 +52,7 @@ export default function Navbar() {
       </div>
 
       {/* Desktop Menu */}
-      <div className="fixed top-10 inset-x-0 max-w-xl mx-auto z-50 hidden md:block">
+      <div className="fixed top-10 inset-x-0 max-w-[37.8rem] mx-auto z-50 hidden md:block">
         <Menu setActive={setActive} className="bg-black/50 backdrop-blur-sm border-white/[0.2] py-4">
           <div className="flex items-center">
             <div className="flex-1 flex items-center justify-center gap-12 px-3">
@@ -69,6 +69,14 @@ export default function Navbar() {
                   <HoveredLink to="/our-team">Our Team</HoveredLink>
                 </div>
               </MenuItem>
+              <MenuItem setActive={setActive} active={active} item="Ex-com" onClick={() => handleMenuClick('ex-com')} >
+           
+              <div className="flex flex-col space-y-6 text-sm py-2">
+                  <HoveredLink to="#ex-com">2024-2025</HoveredLink>
+                  <HoveredLink to="#ex-com">2023-2024</HoveredLink>
+                  <HoveredLink to="#ex-com">2022-2023</HoveredLink>
+                </div>              </MenuItem>
+
               <MenuItem setActive={setActive} active={active} item="Contact" onClick={() => handleMenuClick('contact')}>
                 <div className="flex flex-col space-y-6 text-sm py-2">
                   <HoveredLink to="#contact">Get in Touch</HoveredLink>
