@@ -122,7 +122,7 @@ export default function Navbar() {
                 <MenuItem setActive={setActive} active={active} item="Contact" onClick={() => handleMenuClick('contact')}>
                   <div className="flex flex-col space-y-6 text-sm py-2">
                     <HoveredLink to="#contact">Get in Touch</HoveredLink>
-                    <HoveredLink to="#contact">Support</HoveredLink>
+                    <HoveredLink to="/support">Support</HoveredLink>
                   </div>
                 </MenuItem>
               </div>

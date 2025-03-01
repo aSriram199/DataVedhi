@@ -8,6 +8,7 @@ import Contact from './components/Contact';
 import OurTeam from './pages/OurTeam'; 
 import UpcomingEvents from './pages/UpcomingEvents';
 import Excom from './pages/Excom';
+import Support from './pages/Support';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
             <Route path="/our-team" element={<OurTeam />} />
             <Route path="/upcoming-events" element={<UpcomingEvents />} />
             <Route path="/ex-com" element={<Excom />} />
+            <Route path="/support" element={<Support />} />
           </Routes>
         </div>
       </BrowserRouter>
