@@ -1,6 +1,6 @@
-import { FocusCards } from "./ui/focus-cards";
-import { ShootingStars } from "./ui/shooting-stars";
-import { StarsBackground } from "./ui/background-stars";
+import { FocusCards } from "../components/ui/focus-cards";
+import { ShootingStars } from "../components/ui/shooting-stars";
+import { StarsBackground } from "../components/ui/background-stars";
 
 const OurTeam = () => {
   const coreTeamCards = [
