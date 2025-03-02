@@ -11,7 +11,7 @@ const About = () => {
           <h2 className="text-4xl font-bold mb-6 text-white">
             Our Story
           </h2>
-          <p className="text-gray-300 mb-8">
+          <p className="text-gray-300 mb-8 text-justify">
           Datavedhi.club, the official Data Science club of VBIT, is dedicated to fostering a strong foundation in data-driven technologies. Established under the guidance of Dr. Y. Raju (HoD, Data Science) with faculty coordinator K. Kamal sir, the club provides a platform for students to explore Machine Learning, Artificial Intelligence, Data Analytics, and Big Data. By organizing hands-on workshops, hackathons, and industry collaborations, Datavedhi.club empowers aspiring data scientists to solve real-world problems with data-driven insights. The club encourages innovation, collaboration, and continuous learning to shape future leaders in the field of Data Science
           </p>
         </div>
@@ -33,7 +33,7 @@ const About = () => {
               <p className="text-base sm:text-lg text-black mt-4 mb-2 dark:text-neutral-200">
                 Tech Workshops & Training
               </p>
-              <p className="text-sm text-neutral-600 dark:text-neutral-400">
+              <p className="text-sm text-justify text-neutral-600 dark:text-neutral-400">
               To cultivate a dynamic learning environment by organizing hackathons, flagship events, and workshops in Data Science. Equip students with practical skills in AI, Machine Learning, and Data Analytics through hands-on experience. Bridge the gap between academia and industry, empowering future data professionals to solve real-world challenges.
               </p>
               
@@ -54,7 +54,7 @@ const About = () => {
               <p className="text-base sm:text-lg text-black mt-4 mb-2 dark:text-neutral-200">
                 Community Events
               </p>
-              <p className="text-sm text-neutral-600 dark:text-neutral-400">
+              <p className="text-sm text-justify text-neutral-600 dark:text-neutral-400">
               To be a leading Data Science community that nurtures innovation through hackathons, flagship events, and workshops. Empower students with industry-relevant skills to solve real-world data challenges. Foster a culture of continuous learning, collaboration, and technological advancement in AI, Machine Learning, and Data Analytics.
 
               </p>
