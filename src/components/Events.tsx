@@ -4,52 +4,36 @@ import { motion } from "framer-motion";
 const EVENTS = [
   {
     id: 1,
-    title: 'Advanced AI Workshop',
-    category: 'Workshop',
-    date: '2024-03-25',
+    title: 'IGNIS XR-AI: Learn, Hack, Relish',
+    category: 'Hackathon',
+    date: '2024-03-15',
     image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80',
-    description: 'Deep dive into artificial intelligence and machine learning.',
+    description: 'A three-day technical event focused on Extended Reality (XR) and Artificial Intelligence (AI), featuring workshops, hackathon, and industry collaboration with TalentFarm.ai and Digital Motive Technologies.',
   },
   {
     id: 2,
-    title: 'Data Science Summit',
-    category: 'Conference',
-    date: '2024-02-15',
+    title: 'BI Nexus: A Power BI Odyssey',
+    category: 'Workshop',
+    date: '2024-03-04',
     image: 'https://images.unsplash.com/photo-1509869175650-a1d97972541a?auto=format&fit=crop&q=80',
-    description: 'Exploring the latest trends in data science and analytics.',
+    description: 'An immersive one-day workshop on Business Intelligence and Analytics using Microsoft Power BI, providing hands-on experience in data visualization and analysis.',
   },
   {
     id: 3,
-    title: 'Web3 Development',
-    category: 'Workshop',
-    date: '2023-11-10',
+    title: 'TechFiesta 2K23',
+    category: 'Flagship Event',
+    date: '2023-10-15',
     image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80',
-    description: 'Building decentralized applications with blockchain technology.',
+    description: 'A grand tech fest featuring 3+ technical competitions, two-day bootcamp, and 24-hour hackathon focused on AI, Machine Learning, and Data Science.',
   },
   {
     id: 4,
-    title: 'Cloud Computing Conference',
-    category: 'Conference',
+    title: 'VAIDHUSHI',
+    category: 'Flagship Event',
     date: '2023-08-20',
     image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80',
-    description: 'Latest advancements in cloud technologies and infrastructure.',
-  },
-  {
-    id: 5,
-    title: 'Cybersecurity Symposium',
-    category: 'Conference',
-    date: '2022-12-05',
-    image: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80',
-    description: 'Advanced security protocols and threat prevention.',
-  },
-  {
-    id: 6,
-    title: 'Mobile App Development',
-    category: 'Workshop',
-    date: '2022-07-15',
-    image: 'https://images.unsplash.com/photo-1526498460520-4c246339dccb?auto=format&fit=crop&q=80',
-    description: 'Creating cross-platform mobile applications.',
-  },
+    description: 'A hands-on bootcamp focused on R programming and Data Mining techniques, providing practical exposure to real-world data analysis.',
+  }
 ];
 
 const Events = () => {
@@ -59,20 +43,20 @@ const Events = () => {
       content: (
         <div>
           <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
-            Advancing Technology Frontiers
+            Innovation and Growth
           </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 px-2 sm:px-4">
+          <div className="grid grid-cols-2 gap-4">
             {EVENTS.filter(event => event.date.startsWith('2024')).map(event => (
               <div key={event.id} className="relative group">
                 <img
                   src={event.image}
                   alt={event.title}
-                  className="rounded-lg object-cover h-48 sm:h-44 lg:h-60 w-full shadow-lg transition-transform group-hover:scale-105"
+                  className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-lg transition-transform group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-black/40 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity">
+                <div className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity">
                   <div className="absolute bottom-4 left-4 right-4">
-                    <h3 className="text-white text-lg sm:text-xl font-semibold mb-2">{event.title}</h3>
-                    <p className="text-white/80 text-sm sm:text-base">{event.description}</p>
+                    <h3 className="text-white font-semibold mb-2">{event.title}</h3>
+                    <p className="text-white/80 text-sm">{event.description}</p>
                   </div>
                 </div>
               </div>
@@ -96,7 +80,7 @@ const Events = () => {
                   alt={event.title}
                   className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-lg transition-transform group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-black/40 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity">
+                <div className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity">
                   <div className="absolute bottom-4 left-4 right-4">
                     <h3 className="text-white font-semibold mb-2">{event.title}</h3>
                     <p className="text-white/80 text-sm">{event.description}</p>
@@ -107,34 +91,7 @@ const Events = () => {
           </div>
         </div>
       ),
-    },
-    {
-      title: "2022",
-      content: (
-        <div>
-          <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
-            Foundation and Early Success
-          </p>
-          <div className="grid grid-cols-2 gap-4">
-            {EVENTS.filter(event => event.date.startsWith('2022')).map(event => (
-              <div key={event.id} className="relative group">
-                <img
-                  src={event.image}
-                  alt={event.title}
-                  className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-lg transition-transform group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-black/40 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity">
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <h3 className="text-white font-semibold mb-2">{event.title}</h3>
-                    <p className="text-white/80 text-sm">{event.description}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      ),
-    },
+    }
   ];
 
   return (
