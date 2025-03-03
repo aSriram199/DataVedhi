@@ -34,10 +34,10 @@ const OurTeam = () => {
     {
       title: "Technical Team",
       cards: [
-        { title: "Frontend Developer", src: "" },
+        { title: "sedf", src: "" },
         { title: "Backend Developer", src: "" },
         { title: "DevOps Engineer", src: "" },
-        { title: "Mobile Developer", src: "" }
+        { title: "Ashik Gottam", src: "images/technical-team/G.ASHIK.png" }
       ]
     },
     {
@@ -53,9 +53,9 @@ const OurTeam = () => {
       title: "Design Team",
       cards: [
         { title: "TUMU MANISH", src: "/images/design-team/TUMU MANISH.png" },
-        { title: "THAVVA JAYASIMHA REDDY", src: "/images/design-team/THAVVA JAYASIMHA REDDY.jpg" },
-        { title: "Deepthi priya", src: "/images/design-team/Deepthi priya.jpg" },
-        { title: "Gnanika Naidu", src: "/images/design-team/Gnanika Naidu.jpg" }
+        { title: "THAVVA JAYASIMHA REDDY", src: "/images/design-team/THAVVA JAYASIMHA REDDY.png" },
+        { title: "Deepthi priya", src: "/images/design-team/Deepthi Priya.png" },
+        { title: "Gnanika Naidu", src: "/images/design-team/Gnanika Naidu.png" }
       ]
     },
     {
@@ -63,7 +63,7 @@ const OurTeam = () => {
       cards: [
         { title: "Akshay Patel", src: "/images/project-team/Akshay.png" },
         { title: "Gayatri Gurram", src: "/images/project-team/Gayathri Gurram.png" },
-        { title: "Arutla Sowmya", src: "/images/project-team/Arutla Sowmya.jpg" },
+        { title: "Arutla Sowmya", src: "/images/project-team/Arutla Sowmya.png" },
         { title: "Project Manager", src: "" }
       ]
     }
