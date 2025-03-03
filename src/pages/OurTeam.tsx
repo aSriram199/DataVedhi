@@ -6,27 +6,27 @@ const OurTeam = () => {
   const coreTeamCards = [
     {
       title: "John Doe - Team Lead",
-      src: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=2940&auto=format&fit=crop",
+      src: "",
     },
     {
       title: "Jane Smith - Senior Developer",
-      src: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=2940&auto=format&fit=crop",
+       src: "",
     },
     {
       title: "Mike Johnson - Designer",
-      src: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=2940&auto=format&fit=crop",
+      src: "",
     },
     {
       title: "Sarah Williams - Project Manager",
-      src: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=2940&auto=format&fit=crop",
+      src: "",
     },
     {
       title: "Alex Chen - Technical Architect",
-      src: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2940&auto=format&fit=crop",
+      src: "",
     },
     {
       title: "Emma Davis - Product Owner",
-      src: "https://images.unsplash.com/photo-1573497019236-17f8177b81e8?q=80&w=2940&auto=format&fit=crop", 
+      src: "", 
     }
   ];
 
@@ -34,37 +34,37 @@ const OurTeam = () => {
     {
       title: "Technical Team",
       cards: [
-        { title: "Frontend Developer", src: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2940&auto=format&fit=crop" },
-        { title: "Backend Developer", src: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=2940&auto=format&fit=crop" },
-        { title: "DevOps Engineer", src: "https://images.unsplash.com/photo-1573495627361-d9b87960b12d?q=80&w=2940&auto=format&fit=crop" },
-        { title: "Mobile Developer", src: "https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=2940&auto=format&fit=crop" }
+        { title: "Frontend Developer", src: "" },
+        { title: "Backend Developer", src: "" },
+        { title: "DevOps Engineer", src: "" },
+        { title: "Mobile Developer", src: "" }
       ]
     },
     {
       title: "Documentation Team",
       cards: [
-        { title: "Technical Writer", src: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2940&auto=format&fit=crop" },
-        { title: "Content Lead", src: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2940&auto=format&fit=crop" },
-        { title: "Editor", src: "https://images.unsplash.com/photo-1542626991-cbc4e32524cc?q=80&w=2940&auto=format&fit=crop" },
-        { title: "Content Researcher", src: "https://images.unsplash.com/photo-1543269865-cbf427effbad?q=80&w=2940&auto=format&fit=crop" }
+        { title: "Technical Writer", src: "" },
+        { title: "Content Lead", src: "" },
+        { title: "Jonathan Raj", src: "/images/doc-team/Jonathan Raj.png" },
+        { title: "Harshith Baddam", src: "/images/doc-team/Harshith Baddam.png" }
       ]
     },
     {
       title: "Design Team",
       cards: [
-        { title: "UI Designer", src: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=2940&auto=format&fit=crop" },
-        { title: "UX Designer", src: "https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=2940&auto=format&fit=crop" },
-        { title: "Graphic Designer", src: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=2940&auto=format&fit=crop" },
-        { title: "Motion Designer", src: "https://images.unsplash.com/photo-1558403194-611308249627?q=80&w=2940&auto=format&fit=crop" }
+        { title: "TUMU MANISH", src: "/images/design-team/TUMU MANISH.png" },
+        { title: "THAVVA JAYASIMHA REDDY", src: "/images/design-team/THAVVA JAYASIMHA REDDY.jpg" },
+        { title: "Deepthi priya", src: "/images/design-team/Deepthi priya.jpg" },
+        { title: "Gnanika Naidu", src: "/images/design-team/Gnanika Naidu.jpg" }
       ]
     },
     {
       title: "Project Team",
       cards: [
-        { title: "Project Lead", src: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=2940&auto=format&fit=crop" },
-        { title: "Scrum Master", src: "https://images.unsplash.com/photo-1553028826-f4804a6dba3b?q=80&w=2940&auto=format&fit=crop" },
-        { title: "Product Owner", src: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=2940&auto=format&fit=crop" },
-        { title: "Project Manager", src: "https://images.unsplash.com/photo-1559523161-0fc0d8b38a7a?q=80&w=2940&auto=format&fit=crop" }
+        { title: "Akshay Patel", src: "/images/project-team/Akshay.png" },
+        { title: "Gayatri Gurram", src: "/images/project-team/Gayathri Gurram.png" },
+        { title: "Arutla Sowmya", src: "/images/project-team/Arutla Sowmya.jpg" },
+        { title: "Project Manager", src: "" }
       ]
     }
   ];
