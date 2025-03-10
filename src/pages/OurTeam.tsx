@@ -44,7 +44,7 @@ const OurTeam = () => {
       title: "Documentation Team",
       cards: [
         { title: "Technical Writer", src: "" },
-        { title: "Content Lead", src: "" },
+        { title: "Bhumika Macharla", src: "/images/doc-team/Bhumika Macharla.png" },
         { title: "Jonathan Raj", src: "/images/doc-team/Jonathan Raj.png" },
         { title: "Harshith Baddam", src: "/images/doc-team/Harshith Baddam.png" }
       ]
