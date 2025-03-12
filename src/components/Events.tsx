@@ -1,5 +1,15 @@
 import { Timeline } from "../components/ui/timeline";
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+import logo from '../assets/logo.png';
+
+// Default event images - using the existing logo for all images
+const EVENT_IMAGES = {
+  hackathon: logo,
+  workshop: logo,
+  flagship: logo,
+  default: logo
+};
 
 const EVENTS = [
   {
@@ -7,7 +17,7 @@ const EVENTS = [
     title: 'IGNIS XR-AI: Learn, Hack, Relish',
     category: 'Hackathon',
     date: '2024-03-15',
-    image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80',
+    image: EVENT_IMAGES.hackathon,
     description: 'A three-day technical event focused on Extended Reality (XR) and Artificial Intelligence (AI), featuring workshops, hackathon, and industry collaboration with TalentFarm.ai and Digital Motive Technologies.',
   },
   {
@@ -15,7 +25,7 @@ const EVENTS = [
     title: 'BI Nexus: A Power BI Odyssey',
     category: 'Workshop',
     date: '2024-03-04',
-    image: 'https://images.unsplash.com/photo-1509869175650-a1d97972541a?auto=format&fit=crop&q=80',
+    image: EVENT_IMAGES.workshop,
     description: 'An immersive one-day workshop on Business Intelligence and Analytics using Microsoft Power BI, providing hands-on experience in data visualization and analysis.',
   },
   {
@@ -23,7 +33,7 @@ const EVENTS = [
     title: 'TechFiesta 2K23',
     category: 'Flagship Event',
     date: '2023-10-15',
-    image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80',
+    image: EVENT_IMAGES.flagship,
     description: 'A grand tech fest featuring 3+ technical competitions, two-day bootcamp, and 24-hour hackathon focused on AI, Machine Learning, and Data Science.',
   },
   {
@@ -31,10 +41,45 @@ const EVENTS = [
     title: 'VAIDHUSHI',
     category: 'Flagship Event',
     date: '2023-08-20',
-    image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80',
+    image: EVENT_IMAGES.flagship,
     description: 'A hands-on bootcamp focused on R programming and Data Mining techniques, providing practical exposure to real-world data analysis.',
   }
 ];
+
+// Simple image component with loading state
+interface ImageProps {
+  src: string;
+  alt: string;
+  className: string;
+}
+
+const EventImage = ({ src, alt, className }: ImageProps) => {
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [error, setError] = useState(false);
+  
+  // Use default image if there's an error loading the specified image
+  const imageSrc = error ? EVENT_IMAGES.default : src;
+
+  return (
+    <div className="relative">
+      {!isLoaded && (
+        <div className="absolute inset-0 flex items-center justify-center bg-gray-200 dark:bg-gray-800 rounded-lg">
+          <div className="w-8 h-8 border-2 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
+        </div>
+      )}
+      <img
+        src={imageSrc}
+        alt={alt}
+        className={`${className} ${isLoaded ? 'opacity-100' : 'opacity-0'} transition-opacity duration-300`}
+        onLoad={() => setIsLoaded(true)}
+        onError={() => {
+          setError(true);
+          setIsLoaded(true);
+        }}
+      />
+    </div>
+  );
+};
 
 const Events = () => {
   const timelineData = [
@@ -48,7 +93,7 @@ const Events = () => {
           <div className="grid grid-cols-2 gap-4">
             {EVENTS.filter(event => event.date.startsWith('2024')).map(event => (
               <div key={event.id} className="relative group">
-                <img
+                <EventImage
                   src={event.image}
                   alt={event.title}
                   className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-lg transition-transform group-hover:scale-105"
@@ -75,7 +120,7 @@ const Events = () => {
           <div className="grid grid-cols-2 gap-4">
             {EVENTS.filter(event => event.date.startsWith('2023')).map(event => (
               <div key={event.id} className="relative group">
-                <img
+                <EventImage
                   src={event.image}
                   alt={event.title}
                   className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-lg transition-transform group-hover:scale-105"

@@ -2,7 +2,17 @@ import { motion } from "framer-motion";
 import { AuroraBackground } from "./ui/aurora-background";
 import { ArrowDown } from 'lucide-react';
 import logo from '../assets/logo.png';
+
 const Hero = () => {
+  // Function to handle scroll down when arrow is clicked
+  const handleScrollDown = () => {
+    // Find the next section (events section)
+    const eventsSection = document.getElementById('events');
+    if (eventsSection) {
+      eventsSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section id="home" className="relative min-h-screen bg-gradient-to-b from-[#e5e2df] via-[#bad5ef] to-[#9bc3e1] dark:from-black dark:via-neutral-950 dark:to-neutral-950">
       <AuroraBackground className="bg-transparent dark:bg-transparent">
@@ -37,7 +47,18 @@ const Hero = () => {
            A vibrant community of tech enthusiasts, developers, and innovators shaping the future of technology.
           </p>
         </motion.div>
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <div 
+          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce cursor-pointer"
+          onClick={handleScrollDown}
+          aria-label="Scroll down"
+          role="button"
+          tabIndex={0}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              handleScrollDown();
+            }
+          }}
+        >
           <ArrowDown className="w-6 h-6 text-black dark:text-white" />
         </div>
       </AuroraBackground>

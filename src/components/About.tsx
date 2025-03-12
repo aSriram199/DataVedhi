@@ -11,7 +11,7 @@ const About = () => {
           <h2 className="text-4xl font-bold mb-6 text-white">
             Our Story
           </h2>
-          <p className="text-gray-300 mb-8 text-justify">
+          <p className="text-gray-300 mb-8 text-justify text-3xl sm:text-lg md:text-xl">
           Datavedhi.club, the official Data Science club of VBIT, is dedicated to fostering a strong foundation in data-driven technologies. Established under the guidance of Dr. Y. Raju (HoD, Data Science) with faculty coordinator K. Kamal sir, the club provides a platform for students to explore Machine Learning, Artificial Intelligence, Data Analytics, and Big Data. By organizing hands-on workshops, hackathons, and industry collaborations, Datavedhi.club empowers aspiring data scientists to solve real-world problems with data-driven insights. The club encourages innovation, collaboration, and continuous learning to shape future leaders in the field of Data Science
           </p>
         </div>
