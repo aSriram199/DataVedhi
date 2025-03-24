@@ -37,13 +37,13 @@ const Hero = () => {
               ease: "easeOut"
             }}
           />
-          <div className="text-3xl md:text-7xl font-bold text-black dark:text-white text-center">
+          <div className="text-2xl sm:text-4xl md:text-7xl font-bold text-black dark:text-white text-center">
             Data Vedhi
           </div>
-          <div className="font-extralight text-base md:text-4xl text-neutral-800 dark:text-neutral-200 py-4">
+          <div className="font-extralight text-sm sm:text-xl md:text-4xl text-neutral-800 dark:text-neutral-200 py-4">
             Where Innovation Meets Community
           </div>
-          <p className="text-lg  text-neutral-600 dark:text-neutral-300 mb-8 max-w-2xl text-center">
+          <p className="text-sm sm:text-base md:text-lg text-neutral-600 dark:text-neutral-300 mb-8 max-w-2xl text-center">
            A vibrant community of tech enthusiasts, developers, and innovators shaping the future of technology.
           </p>
         </motion.div>

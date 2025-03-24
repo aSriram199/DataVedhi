@@ -100,8 +100,8 @@ const Events = () => {
                 />
                 <div className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity">
                   <div className="absolute bottom-4 left-4 right-4">
-                    <h3 className="text-white font-semibold mb-2">{event.title}</h3>
-                    <p className="text-white/80 text-sm">{event.description}</p>
+                    <h3 className="text-sm sm:text-base md:text-lg text-white font-semibold mb-2">{event.title}</h3>
+                    <p className="text-xs sm:text-sm text-white/80">{event.description}</p>
                   </div>
                 </div>
               </div>
@@ -127,8 +127,8 @@ const Events = () => {
                 />
                 <div className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity">
                   <div className="absolute bottom-4 left-4 right-4">
-                    <h3 className="text-white font-semibold mb-2">{event.title}</h3>
-                    <p className="text-white/80 text-sm">{event.description}</p>
+                    <h3 className="text-sm sm:text-base md:text-lg text-white font-semibold mb-2">{event.title}</h3>
+                    <p className="text-xs sm:text-sm text-white/80">{event.description}</p>
                   </div>
                 </div>
               </div>
@@ -140,7 +140,7 @@ const Events = () => {
   ];
 
   return (
-    <section id="events" className="relative min-h-screen bg-gradient-to-b from-[#3b82f6] via-[#818cf8] to-[#93c5fd] dark:from-neutral-950 dark:via-black dark:to-neutral-950 py-10 sm:py-20">
+    <section id="events" className="relative md:min-h-screen h-auto bg-gradient-to-b from-[#ABC7E2] via-[#818cf8] to-[#93c5fd] dark:from-neutral-950 dark:via-black dark:to-neutral-950 py-6 sm:py-10 md:py-20">
       <div className="absolute inset-0 bg-grid-white/[0.02]" />
       <div className="absolute inset-0 flex items-center justify-center bg-black/50 [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
       <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -154,10 +154,10 @@ const Events = () => {
           }}
           className="relative"
         >
-          <div className="text-2xl sm:text-3xl md:text-7xl font-bold text-white text-center pt-20">
+          <div className="text-xl sm:text-3xl md:text-7xl font-bold text-white text-center pt-10 md:pt-20">
             Events and Workshops
           </div>
-          <div className="font-extralight text-sm sm:text-base md:text-xl text-neutral-200 py-4 text-center max-w-3xl mx-auto">
+          <div className="font-extralight text-xs sm:text-sm md:text-xl text-neutral-200 py-4 text-center max-w-3xl mx-auto">
             We have conducted a number of events and workshops to help students and professionals to learn and grow.
           </div>
           <Timeline data={timelineData} />

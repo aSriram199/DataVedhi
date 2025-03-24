@@ -26,13 +26,13 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="relative h-screen sm:h-[40vh] md:h-[40vh] bg-gradient-to-b from-[#93c5fd] via-[#818cf8] to-[#3b82f6] dark:from-black dark:via-neutral-950 dark:to-neutral-950">
+    <section id="contact" className="relative h-[60vh] sm:h-[40vh] md:h-[40vh] bg-gradient-to-b from-[#3b82f6] via-[#818cf8] to-[#93c5fd] dark:from-black dark:via-neutral-950 dark:to-neutral-950">
       <div className="absolute inset-0 bg-grid-white/[0.02]" />
       <div className="absolute inset-0 flex items-center justify-center bg-black/50 [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
       
       {/* Desktop View */}
-      <div className="relative hidden md:flex h-full flex-col items-center justify-center">
-        <h2 className="text-4xl font-bold text-white mb-4">Contact Us</h2>
+      <div className="relative hidden md:flex flex-col items-center justify-center">
+        <h2 className="text-4xl font-bold text-white mb-10">Contact Us</h2>
         <div className="flex items-center justify-center w-full">
           <FloatingDock
             items={links}
@@ -42,7 +42,7 @@ const Contact = () => {
       </div>
 
       {/* Mobile View */}
-      <div className="relative md:hidden py-12 pb-20">
+      <div className="relative md:hidden h-full flex flex-col justify-center">
         <div className="text-center mb-6">
           <h2 className="text-3xl font-bold text-white mb-3">Contact Us</h2>
           <p className="text-gray-300 text-base">vbit.datavedhi@gmail.com</p>
