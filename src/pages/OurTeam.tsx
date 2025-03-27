@@ -1,4 +1,4 @@
-import { FocusCards } from "./ui/focus-cards";
+import { FocusCards } from "../components/ui/focus-cards";
 
 const OurTeam = () => {
   const coreTeamCards = [

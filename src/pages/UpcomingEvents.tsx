@@ -1,5 +1,5 @@
 
-import { Carousel } from "./ui/carousel";
+import { Carousel } from "../components/ui/carousel";
 
 const slideData = [
   {
