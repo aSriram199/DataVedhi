@@ -1,4 +1,4 @@
-import { BackgroundBeams } from "../components/ui/background-line";
+
 import { Carousel } from "../components/ui/carousel";
 
 const slideData = [
@@ -25,9 +25,6 @@ const UpcomingEvents = () => {
         <div className="relative z-10 mt-8 w-full max-w-full">
           <Carousel slides={slideData} />
         </div>
-      </div>
-      <div className="absolute inset-0 w-full h-full">
-        <BackgroundBeams />
       </div>
     </div>
   );

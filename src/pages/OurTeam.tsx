@@ -1,6 +1,4 @@
 import { FocusCards } from "../components/ui/focus-cards";
-import { ShootingStars } from "../components/ui/shooting-stars";
-import { StarsBackground } from "../components/ui/background-stars";
 
 const OurTeam = () => {
   const coreTeamCards = [
@@ -23,6 +21,14 @@ const OurTeam = () => {
     {
       title: "Alex Chen - Technical Architect",
       src: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2940&auto=format&fit=crop",
+    },
+    {
+      title: "Emma Davis - Product Owner",
+      src: "https://images.unsplash.com/photo-1573497019236-17f8177b81e8?q=80&w=2940&auto=format&fit=crop", 
+    },
+    {
+      title: "Emma Davis - Product Owner",
+      src: "https://images.unsplash.com/photo-1573497019236-17f8177b81e8?q=80&w=2940&auto=format&fit=crop", 
     },
     {
       title: "Emma Davis - Product Owner",
@@ -70,38 +76,33 @@ const OurTeam = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-neutral-900 p-8 pt-32 relative">
-      <ShootingStars 
-        minSpeed={10} 
-        maxSpeed={30} 
-        minDelay={1000} 
-        maxDelay={1000}
-        starColor="#9E00FF"
-        trailColor="#2EB9DF"
-        starWidth={12}
-        starHeight={1}
-      />
-      <StarsBackground 
-        starDensity={0.0009}
-        allStarsTwinkle={true}
-        minTwinkleSpeed={0.5}
-        maxTwinkleSpeed={0.5}
-        twinkleProbability={0.9}
-      />
-      <div className="relative z-10">
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 p-8 pt-32">
+      <div className="relative">
         {/* Core Team Section */}
         <section className="mb-32 container mx-auto max-w-7xl">
-          <h1 className="text-4xl font-bold text-white mb-16 text-center">Core Team</h1>
-          <FocusCards cards={coreTeamCards} />
+          <h1 className="text-2xl mt-5 sm:text-3xl md:text-4xl font-bold text-white mb-16 text-center">Core Team</h1>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+            {coreTeamCards.map((card, index) => (
+              <div key={index} className="w-full">
+                <FocusCards cards={[card]} />
+              </div>
+            ))}
+          </div>
         </section>
 
         {/* Portfolio Sections */}
         <section className="container mx-auto max-w-7xl">
-          <h2 className="text-4xl font-bold text-white mb-16 text-center">Portfolios</h2>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-16 text-center">Portfolios</h2>
           {portfolioSections.map((section, index) => (
             <div key={index} className="mb-32">
-              <h3 className="text-2xl font-semibold text-white mb-12 text-center">{section.title}</h3>
-              <FocusCards cards={section.cards} />
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold text-white mb-12 text-center">{section.title}</h3>
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+                {section.cards.map((card, cardIndex) => (
+                  <div key={cardIndex} className="w-full">
+                    <FocusCards cards={[card]} />
+                  </div>
+                ))}
+              </div>
             </div>
           ))}
         </section>
